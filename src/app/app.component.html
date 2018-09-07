@@ -1,17 +1,24 @@
 <!--Start html for login page  -->
-    <h1>Welcome to {{ title }}</h1>
+<div class="container">
+  <header class="row">
+    <h1 class="welcome col-12 col-md-9">Welcome to {{ title }}</h1>
     <!-- To be replaced with logo (?) -->
-    <h4><a href="#">En Espanol</a></h4>
-    <h2>Sign in to Online Banking</h2>
-    <div class="login-page">
-        <div class="form">
-            <form class="login-form">
-                <input type="text" placeholder="Please enter your USERNAME" />
-                <input type="password" placeholder="Please enter your PASSWORD" />
-                <button>login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
-            </form>
-        </div>
+    <nav class="nav" id="drawer">
+      <a href="#" class="col-12 espanol">En Espanol</a>
+    </nav>
+  </header>
+  <section class="login-page">
+    <h3 class="sign-in">Sign in to Online Banking</h3>
+    <div class="form">
+      <form class="login-form">
+        <input type="text" placeholder="Please enter your USERNAME" />
+        <input type="password" placeholder="Please enter your PASSWORD" />
+        <button>login</button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+        <p class="resetUser">Forgot your username? <a href="#">Click here</a></p>
+        <p class="resetPass">Forgot your password? <a href="#">Click here</a></p>
+      </form>
     </div>
-
+  </section>
+</div>
 <router-outlet></router-outlet>
