@@ -1,11 +1,24 @@
 <!--Start html for login page  -->
 <div class="container">
   <header class="row">
-    <h1 class="welcome col-12 col-md-9">Welcome to {{ title }}</h1>
+    <h1 class="welcome col-10 col-md-12">Welcome to {{ title }}</h1>
     <!-- To be replaced with logo (?) -->
-    <nav class="nav" id="drawer">
-      <a href="#" class="col-12 espanol">En Espanol</a>
+    <a href="#main-menu" class="menu-toggle col-2 col-md-12" id="main-menu-toggle" role="button" aria-expanded="false" aria-controls="main-menu" aria-label="Open main menu">
+      <span class="sr-only">Open main menu</span>
+      <fa-icon icon="bars"></fa-icon>
+    </a>
+    <nav id="main-menu" class="main-menu" role="navigation" aria-expanded="false" aria-label="Main menu">
+      <a href="#main-menu-toggle" role="button" class="menu-close" id="main-menu-close" aria-expanded="false" aria-controls="main-menu" aria-label="Close main menu">
+        <span class="sr-only">Close main menu</span>
+        <span class="close"><fa-icon icon="times-circle"></fa-icon></span>
+      </a>
+      <ul>
+        <li><a href="#">Languages</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
+    <a href="#menu-toggle" class="backdrop" tabindex="-1" aria-hidden="true" hidden></a>
   </header>
   <section class="login-page">
     <h3 class="sign-in">Sign in to Online Banking</h3>
@@ -19,6 +32,8 @@
         <p class="resetPass">Forgot your password? <a href="#">Click here</a></p>
       </form>
     </div>
+  </section>
+  <section>
   </section>
 </div>
 <router-outlet></router-outlet>
