@@ -10,6 +10,3 @@ export class AppComponent {
   title = 'bankApp';
   faCoffee = faCoffee;
 }
-
-
-

@@ -26,7 +26,7 @@
   display: inline-block;
   padding: .75em 15px;
   line-height: 1em;
-  font-size: 1em;
+  font-size: 1.5rem;
   color: #333;
 }
 
@@ -37,7 +37,7 @@
 
 .main-menu {
   position: absolute;
-  left: -200px;
+  left: -300px;
   top: 0;
   height: 100%;
   overflow-x: visible;
@@ -46,11 +46,11 @@
   z-index: 999;
 }
 
-.main-menu ul {
+.main-menu ul , .sub-menu ul {
   list-style: none;
   margin: 0;
   padding: 2.5em 0 0;
-  /* Hide shadow w/ -8px while 'closed' */
+   /*Hide shadow w/ -8px while 'closed'*/
   -webkit-box-shadow: -8px 0 8px rgba(0,0,0,.5);
   -moz-box-shadow: -8px 0 8px rgba(0,0,0,.5);
   box-shadow: -8px 0 8px rgba(0,0,0,.5);
@@ -59,7 +59,8 @@
   background: #007f9c;
 }
 
-.main-menu a {
+
+.main-menu a, .sub-menu a, .test {
   display: block;
   padding: .50em 15px;
   line-height: 1em;
@@ -69,12 +70,12 @@
   border-bottom: 1px solid #383838;
 }
 
-.main-menu li:first-child a {
+.main-menu li:first-child a, .sub-menu li:first-child a {
   border-top: 1px solid #383838;
 }
 
 .main-menu a:hover,
-.main-menu a:focus {
+.main-menu a:focus, .sub-languages:hover, .sub-languages:focus, .test:focus, .test:hover {
   background: #FFF;
   text-decoration: underline;
 }
@@ -111,9 +112,7 @@ h4 {
   padding-top: -20px;
 }
 
-
-
-/* Spacing and padding set for page  */
+/*  Spacing and padding set for page */
 
 .login-page {
   width: 360px;
@@ -122,8 +121,8 @@ h4 {
 }
 
 
-/* Styling for box containing login form  */
-
+/*  Styling for box containing login form
+ */
 .form {
   position: relative;
   z-index: 1;
@@ -136,7 +135,7 @@ h4 {
 }
 
 
-/* Styling for customer's input  */
+ /*Styling for customer's input*/
 
 .form input {
   font-family: "Roboto", sans-serif;
@@ -151,7 +150,7 @@ h4 {
 }
 
 
-/* Styling for login button   */
+ /* Styling for login button */
 
 .form button {
   font-family: "Roboto", sans-serif;
@@ -169,7 +168,7 @@ h4 {
 }
 
 
-/* This styling will be active when login button is hovered over */
+ /* This styling will be active when login button is hovered over */
 
 .form button:hover,
 .form button:active,
@@ -199,13 +198,13 @@ h4 {
   border-bottom: none !important;
 }
 
-/*
- On small devices, allow it to toggle...
-*/
-/*
- :target for non-JavaScript
- aria-expanded="true/false" will be for JavaScript
-*/
+
+/* On small devices, allow it to toggle...*/
+
+
+/*  :target for non-JavaScript
+ aria-expanded="true/false" will be for JavaScript */
+
 .main-menu:target,
 .main-menu[aria-expanded="true"] {
   left: 0;
@@ -220,13 +219,14 @@ h4 {
   z-index: 1001;
 }
 
+
 .main-menu:target ul,
-.main-menu[aria-expanded="true"] ul {
+.main-menu[aria-expanded="true"] ul,
+.sub-menu ul,
+.sub-menu[aria-expanded="true"] ul, .test {
   position: relative;
   z-index: 1000;
 }
-
-/* Sass negates the hidden attribute by default, so removing that power from it */
 
 
 .main-menu:target + .backdrop,
@@ -252,28 +252,28 @@ h4 {
   }
 }
 
-/*
- Larger screen styling
- Horizontal menu
-*/
-@media (min-width: 768px) {
+
+/*  Larger screen styling
+ Horizontal menu */
+
+ @media (min-width: 768px) {
   .menu-toggle,
   .main-menu .menu-close {
     display: none;
   }
 
-  /* Undo positioning of off-canvas menu */
-  .main-menu {
+/*    Undo positioning of off-canvas menu */
+   .main-menu {
     display: block;
     position: static !important;
     margin: 0 auto;
   }
 
-  .main-menu ul {
+   .main-menu ul {
     display: flex;
 
-    /* Undo off-canvas styling */
-    padding: 0;
+      /* Undo off-canvas styling */
+     padding: 0;
     -webkit-box-shadow: none;
        -moz-box-shadow: none;
             box-shadow: none;
@@ -282,15 +282,13 @@ h4 {
     background: none;
   }
 
-  .main-menu a {
+   .main-menu a {
     color: #06c;
-    border: 0 !important; /* Remove borders from off-canvas styling */
-  }
-
-  .main-menu a:hover,
+    border: 0 !important;  /* Remove borders from off-canvas styling */
+}
+   .main-menu a:hover,
   .main-menu a:focus {
     background: none; /* Remove background from off-canvas styling */
     color: #c00;
   }
 }
-
